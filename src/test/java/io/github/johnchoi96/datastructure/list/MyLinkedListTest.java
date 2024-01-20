@@ -21,6 +21,16 @@ public class MyLinkedListTest {
     }
 
     @Test
+    public void testAdd_twoElements() {
+        MyList<String> list = new MyLinkedList<>();
+        list.add("Mario");
+        list.add("Luigi");
+        assertEquals(list.getSize(), 2);
+        assertEquals(list.get(0), "Mario");
+        assertEquals(list.get(1), "Luigi");
+    }
+
+    @Test
     public void testAddMultiple() {
         Integer[] testData = {1, 5, 6, 10, 100, -5};
         MyList<Integer> list = new MyLinkedList<>();
@@ -30,6 +40,35 @@ public class MyLinkedListTest {
         assertEquals(6, list.getSize());
         for (int i = 0; i < testData.length; i++) {
             assertEquals(testData[i], list.get(i));
+        }
+    }
+
+    @Test
+    public void testAddAtFrontNothing() {
+        MyList<Integer> list = new MyLinkedList<>();
+        assertEquals(list.getSize(), 0);
+    }
+
+    @Test
+    public void testAddAtFront_TwoElements() {
+        MyList<String> list = new MyLinkedList<>();
+        list.addAtFront("Mario");
+        list.addAtFront("Luigi");
+        assertEquals(list.getSize(), 2);
+        assertEquals(list.get(0), "Luigi");
+        assertEquals(list.get(1), "Mario");
+    }
+
+    @Test
+    public void testAddAtFrontMultiple() {
+        Integer[] testData = {1, 5, 6, 10, 100, -5};
+        MyList<Integer> list = new MyLinkedList<>();
+        for (int number : testData) {
+            list.addAtFront(number);
+        }
+        assertEquals(testData.length, list.getSize());
+        for (int i = 0, j = testData.length - 1; i < testData.length; i++, j--) {
+            assertEquals(testData[j], list.get(i));
         }
     }
 
@@ -57,12 +96,12 @@ public class MyLinkedListTest {
             list.add(number);
         }
         for (int i = 0; i < expectedSize; i++) {
-            list.remove();
+            assertEquals(testData[i], list.remove());
         }
         assertEquals(0, list.getSize());
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testTryRemovingWithNothingWithIndex() {
         MyList<Integer> list = new MyLinkedList<>();
         list.remove(0);
@@ -133,7 +172,7 @@ public class MyLinkedListTest {
         assertFalse(list.isEmpty());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testReplaceWithNoElements() {
         MyList<String> list = new MyLinkedList<>();
         list.replace(1, "Hi");
@@ -186,7 +225,7 @@ public class MyLinkedListTest {
         assertEquals(numOfElements, list.getSize());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testReplaceWithMultipleElements_indexOutOfBounds() {
         MyList<Integer> list = new MyLinkedList<>();
         int numOfElements = 100;

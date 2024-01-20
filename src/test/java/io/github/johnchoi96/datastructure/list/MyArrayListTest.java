@@ -21,6 +21,16 @@ public class MyArrayListTest {
     }
 
     @Test
+    public void testAdd_twoElements() {
+        MyList<String> list = new MyArrayList<>();
+        list.add("Mario");
+        list.add("Luigi");
+        assertEquals(list.getSize(), 2);
+        assertEquals(list.get(0), "Mario");
+        assertEquals(list.get(1), "Luigi");
+    }
+
+    @Test
     public void testAddMultiple() {
         Integer[] testData = {1, 5, 6, 10, 100, -5};
         MyList<Integer> list = new MyArrayList<>();
@@ -30,6 +40,35 @@ public class MyArrayListTest {
         assertEquals(6, list.getSize());
         for (int i = 0; i < testData.length; i++) {
             assertEquals(testData[i], list.get(i));
+        }
+    }
+
+    @Test
+    public void testAddAtFrontNothing() {
+        MyList<Integer> list = new MyArrayList<>();
+        assertEquals(list.getSize(), 0);
+    }
+
+    @Test
+    public void testAddAtFront_TwoElements() {
+        MyList<String> list = new MyArrayList<>();
+        list.addAtFront("Mario");
+        list.addAtFront("Luigi");
+        assertEquals(list.getSize(), 2);
+        assertEquals(list.get(0), "Luigi");
+        assertEquals(list.get(1), "Mario");
+    }
+
+    @Test
+    public void testAddAtFrontMultiple() {
+        Integer[] testData = {1, 5, 6, 10, 100, -5};
+        MyList<Integer> list = new MyArrayList<>();
+        for (int number : testData) {
+            list.addAtFront(number);
+        }
+        assertEquals(testData.length, list.getSize());
+        for (int i = 0, j = testData.length - 1; i < testData.length; i++, j--) {
+            assertEquals(testData[j], list.get(i));
         }
     }
 
@@ -56,13 +95,13 @@ public class MyArrayListTest {
         for (int number : testData) {
             list.add(number);
         }
-        for (int i = 0; i < expectedSize; i++) {
-            list.remove();
+        for (int i = 0, j = testData.length - 1; i < expectedSize; i++, j--) {
+            assertEquals(testData[j], list.remove());
         }
         assertEquals(0, list.getSize());
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testTryRemovingWithNothingWithIndex() {
         MyList<Integer> list = new MyArrayList<>();
         list.remove(0);
@@ -133,7 +172,7 @@ public class MyArrayListTest {
         assertFalse(list.isEmpty());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testReplaceWithNoElements() {
         MyList<String> list = new MyArrayList<>();
         list.replace(1, "Hi");
@@ -186,7 +225,7 @@ public class MyArrayListTest {
         assertEquals(numOfElements, list.getSize());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testReplaceWithMultipleElements_indexOutOfBounds() {
         MyList<Integer> list = new MyArrayList<>();
         int numOfElements = 100;
