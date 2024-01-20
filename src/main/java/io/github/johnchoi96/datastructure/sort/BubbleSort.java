@@ -1,4 +1,4 @@
 package io.github.johnchoi96.datastructure.sort;
 
-public class QuickSortTest {
+public class BubbleSort {
 }
