@@ -1,4 +1,4 @@
-# java-data-structure-assignment
+# java-data-structure-and-algorithm-exercises
 
 ## Topics:
 
