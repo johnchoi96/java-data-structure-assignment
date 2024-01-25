@@ -22,8 +22,8 @@
 
 
 #### Queue
-* Exercise: Not Ready
-* Updated: n/a
+* Exercise: Ready
+* Updated: Jan 25 2024
 * [Link](src/main/java/io/github/johnchoi96/datastructure/queue/MyQueue.java)
 
 ## Set
