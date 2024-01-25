@@ -182,9 +182,10 @@ public class MyLinkedListTest {
     public void testReplaceWithOneElement() {
         MyList<String> list = new MyLinkedList<>();
         list.add("Hello");
-        list.replace(0, "World");
+        String original = list.replace(0, "World");
         assertEquals("World", list.get(0));
         assertEquals(1, list.getSize());
+        assertEquals(original, "Hello");
     }
 
     @Test
@@ -194,9 +195,10 @@ public class MyLinkedListTest {
         for (int i = 0; i < numOfElements; i++) {
             list.add(i);
         }
-        list.replace(0, -1);
+        Integer original = list.replace(0, -1);
         assertEquals(Integer.valueOf(-1), list.get(0));
         assertEquals(numOfElements, list.getSize());
+        assertEquals(original, Integer.valueOf(0));
     }
 
     @Test
@@ -207,9 +209,11 @@ public class MyLinkedListTest {
             list.add(i);
         }
         int indexToReplace = numOfElements / 2;
-        list.replace(indexToReplace, -1);
+        Integer originalCenterValue = list.get(indexToReplace);
+        Integer original = list.replace(indexToReplace, -1);
         assertEquals(Integer.valueOf(-1), list.get(indexToReplace));
         assertEquals(numOfElements, list.getSize());
+        assertEquals(original, originalCenterValue);
     }
 
     @Test
@@ -220,9 +224,30 @@ public class MyLinkedListTest {
             list.add(i);
         }
         int indexToReplace = numOfElements - 1;
-        list.replace(indexToReplace, -1);
+        Integer originalLastValue = list.get(indexToReplace);
+        Integer original = list.replace(indexToReplace, -1);
         assertEquals(Integer.valueOf(-1), list.get(indexToReplace));
         assertEquals(numOfElements, list.getSize());
+        assertEquals(original, originalLastValue);
+    }
+
+    @Test
+    public void testReplaceWithMultipleElements_ensure_get_still_works() {
+        MyList<Integer> list = new MyLinkedList<>();
+        int numOfElements = 100;
+        for (int i = 0; i < numOfElements; i++) {
+            list.add(i);
+        }
+        int indexToReplace = numOfElements / 2;
+        list.replace(indexToReplace, -1);
+        // ensure get works correctly
+        for (int i = 0; i < numOfElements; i++) {
+            if (i == indexToReplace) {
+                assertEquals(Integer.valueOf(-1), list.get(i));
+            } else {
+                assertEquals(Integer.valueOf(i), list.get(i));
+            }
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -234,5 +259,35 @@ public class MyLinkedListTest {
         }
         int indexToReplace = numOfElements * 2;
         list.replace(indexToReplace, -1);
+    }
+
+    @Test
+    public void testConvertToArrayList_noElement() {
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        MyArrayList<Integer> convertedArrayList = linkedList.convertToArrayList();
+        assertEquals(0, convertedArrayList.getSize());
+    }
+
+    @Test
+    public void testConvertToArrayList_oneElement() {
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        linkedList.add(5);
+        MyArrayList<Integer> convertedArrayList = linkedList.convertToArrayList();
+        assertEquals(Integer.valueOf(5), convertedArrayList.get(0));
+        assertEquals(1, convertedArrayList.getSize());
+    }
+
+    @Test
+    public void testConvertToArrayList_multipleElements() {
+        int numOfElements = 100;
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        for (int i = 0; i < numOfElements; i++) {
+            linkedList.add(numOfElements);
+        }
+        MyArrayList<Integer> convertedArrayList = linkedList.convertToArrayList();
+        assertEquals(convertedArrayList.getSize(), linkedList.getSize());
+        for (int i = 0; i < numOfElements; i++) {
+            assertEquals(linkedList.get(i), convertedArrayList.get(i));
+        }
     }
 }
