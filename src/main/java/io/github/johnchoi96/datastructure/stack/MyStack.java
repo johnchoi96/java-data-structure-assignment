@@ -1,8 +1,22 @@
 package io.github.johnchoi96.datastructure.stack;
 
+import io.github.johnchoi96.datastructure.list.MyList;
 import jdk.jshell.spi.ExecutionControl;
 
+/**
+ * Use either MyArrayList or MyLinkedList for implementation.
+ *
+ * @param <E> generic type
+ */
 public class MyStack<E> {
+
+    private MyList<E> internalList;
+
+    public MyStack() {
+        // choose one of the following:
+        //        internalList = new MyArrayList<>();
+        //        internalList = new MyLinkedList<>();
+    }
 
     /**
      * Pushes an element to the stack.
