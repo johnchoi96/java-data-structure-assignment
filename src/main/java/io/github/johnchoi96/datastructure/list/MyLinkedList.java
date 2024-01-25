@@ -54,6 +54,7 @@ public class MyLinkedList<E> implements MyList<E> {
      * If index is invalid, throw IllegalArgumentException.
      * @param index removal index
      * @return removed element
+     * @throws IllegalArgumentException if index is invalid
      */
     @Override
     public E remove(int index) {
@@ -72,6 +73,7 @@ public class MyLinkedList<E> implements MyList<E> {
      * 2 -> 3 -> 4 -> null
      * If removal is invalid, throw IllegalStateException.
      * @return removed element
+     * @throws IllegalStateException if removal is invalid
      */
     @Override
     public E remove() {
@@ -91,6 +93,7 @@ public class MyLinkedList<E> implements MyList<E> {
      * If index is invalid, throw IllegalArgumentException.
      * @param index of the element to retrieve
      * @return element at the given index
+     * @throws IllegalArgumentException if index is invalid
      */
     @Override
     public E get(int index) {
@@ -130,9 +133,27 @@ public class MyLinkedList<E> implements MyList<E> {
      * @param index of the list to replace
      * @param element new element
      * @return original element
+     * @throws IllegalArgumentException if index is invalid
      */
     @Override
     public E replace(int index, E element) {
+        try {
+            throw new ExecutionControl.NotImplementedException("Not Implemented");
+        } catch (ExecutionControl.NotImplementedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Converts the current state of MyLinkedList to MyArrayList.
+     * For example, linked list with:
+     * 3 -> 2 -> -5 -> 2 -> 7 -> null
+     * should return MyArrayList of:
+     * [3, 2, -5, 2, 7].
+     *
+     * @return array list with same data as linked list
+     */
+    public MyArrayList<E> convertToArrayList() {
         try {
             throw new ExecutionControl.NotImplementedException("Not Implemented");
         } catch (ExecutionControl.NotImplementedException e) {
