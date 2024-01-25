@@ -10,7 +10,7 @@
 
 #### MyLinkedList
 * Exercise: Ready
-* Updated: Jan 20 2024
+* Updated: Jan 25 2024
 * [Link](src/main/java/io/github/johnchoi96/datastructure/list/MyLinkedList.java)
 
 

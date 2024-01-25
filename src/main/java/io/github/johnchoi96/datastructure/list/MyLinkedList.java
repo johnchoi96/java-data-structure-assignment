@@ -4,6 +4,18 @@ import jdk.jshell.spi.ExecutionControl;
 
 public class MyLinkedList<E> implements MyList<E> {
 
+    public static class Node<E> {
+        E data;
+        Node<E> next;
+
+        public Node(E data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    private Node<E> head;
+
     /**
      * Adds element at the end of the list.
      * For example, adding [1, 2, 3, 4] in order should result in:
