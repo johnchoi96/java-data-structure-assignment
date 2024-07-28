@@ -1,11 +1,12 @@
 package io.github.johnchoi96.datastructure.list;
 
-import jdk.jshell.spi.ExecutionControl;
+import org.apache.commons.lang3.NotImplementedException;
 
 public class MyLinkedList<E> implements MyList<E> {
 
     public static class Node<E> {
         E data;
+
         Node<E> next;
 
         public Node(E data) {
@@ -20,29 +21,23 @@ public class MyLinkedList<E> implements MyList<E> {
      * Adds element at the end of the list.
      * For example, adding [1, 2, 3, 4] in order should result in:
      * 1 -> 2 -> 3 -> 4 -> null
+     *
      * @param element to add
      */
     @Override
     public void add(E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
      * Adds element at the front of the list.
      * For example, adding [1, 2, 3, 4] in order should result in:
      * 4 -> 3 -> 2 -> 1 -> null
+     *
      * @param element to add
      */
     public void addAtFront(E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -52,17 +47,14 @@ public class MyLinkedList<E> implements MyList<E> {
      * with removal index of 2 should result in:
      * 1 -> 2 -> 4 -> null
      * If index is invalid, throw IllegalArgumentException.
+     *
      * @param index removal index
      * @return removed element
      * @throws IllegalArgumentException if index is invalid
      */
     @Override
     public E remove(int index) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -72,16 +64,13 @@ public class MyLinkedList<E> implements MyList<E> {
      * should result in:
      * 2 -> 3 -> 4 -> null
      * If removal is invalid, throw IllegalStateException.
+     *
      * @return removed element
      * @throws IllegalStateException if removal is invalid
      */
     @Override
     public E remove() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -91,35 +80,24 @@ public class MyLinkedList<E> implements MyList<E> {
      * with given index of 2 should result in:
      * 3
      * If index is invalid, throw IllegalArgumentException.
+     *
      * @param index of the element to retrieve
      * @return element at the given index
      * @throws IllegalArgumentException if index is invalid
      */
     @Override
     public E get(int index) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     @Override
     public int getSize() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     @Override
     public boolean isEmpty() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -130,18 +108,15 @@ public class MyLinkedList<E> implements MyList<E> {
      * should result in:
      * 1 -> 2 -> -5 -> 4 -> null
      * Throw an IllegalArgumentException if index is invalid.
-     * @param index of the list to replace
+     *
+     * @param index   of the list to replace
      * @param element new element
      * @return original element
      * @throws IllegalArgumentException if index is invalid
      */
     @Override
     public E replace(int index, E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -154,10 +129,6 @@ public class MyLinkedList<E> implements MyList<E> {
      * @return array list with same data as linked list
      */
     public MyArrayList<E> convertToArrayList() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 }
