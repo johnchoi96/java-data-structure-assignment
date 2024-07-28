@@ -3,7 +3,7 @@ package io.github.johnchoi96.datastructure.set;
 import org.apache.commons.lang3.NotImplementedException;
 
 /**
- * Use either MyArrayList or MyLinkedList for implementation.
+ * Use the static Array of Objects for the internal list.
  *
  * @param <E> generic type
  */
