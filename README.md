@@ -46,15 +46,15 @@
 
 #### Bubble Sort
 
-* Exercise: Not Ready
-* Updated: n/a
-* [Link](src/main/java/io/github/johnchoi96/datastructure/sort/BubbleSort.java)
+* Exercise: Ready
+* Updated: Jul 28 2024
+* [Link](src/main/java/io/github/johnchoi96/datastructure/sort/BubbleSortMachine.java)
 
 #### Merge Sort
 
-* Exercise: Not Ready
-* Updated: n/a
-* [Link](src/main/java/io/github/johnchoi96/datastructure/sort/MergeSort.java)
+* Exercise: Ready
+* Updated: Jul 28 2024
+* [Link](src/main/java/io/github/johnchoi96/datastructure/sort/MergeSortMachine.java)
 
 ## Binary Trees
 
