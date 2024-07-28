@@ -38,8 +38,8 @@
 
 ## HashTable
 
-* Exercise: Not Ready
-* Updated: n/a
+* Exercise: Ready
+* Updated: Jul 28 2024
 * [Link](src/main/java/io/github/johnchoi96/datastructure/hashtable/MyHashTable.java)
 
 ## Sorting Algorithms
