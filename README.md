@@ -54,7 +54,7 @@
 
 * Exercise: Not Ready
 * Updated: n/a
-* [Link](src/main/java/io/github/johnchoi96/datastructure/sort/MergeSort.java)
+* [Link](src/main/java/io/github/johnchoi96/datastructure/sort/MergeSortMachine.java)
 
 ## Binary Trees
 
