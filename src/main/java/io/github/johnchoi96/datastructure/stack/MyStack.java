@@ -1,7 +1,7 @@
 package io.github.johnchoi96.datastructure.stack;
 
 import io.github.johnchoi96.datastructure.list.MyList;
-import jdk.jshell.spi.ExecutionControl;
+import org.apache.commons.lang3.NotImplementedException;
 
 /**
  * Use either MyArrayList or MyLinkedList for implementation.
@@ -22,14 +22,11 @@ public class MyStack<E> {
      * Pushes an element to the stack.
      * For example, pushing 1, 3, 2, 5 in order should produce stack of:
      * bottom [1, 3, 2, 5] top
+     *
      * @param element to push
      */
     public void push(E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -43,11 +40,7 @@ public class MyStack<E> {
      * @throws IllegalStateException if unable to pop
      */
     public E pop() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -61,34 +54,24 @@ public class MyStack<E> {
      * @throws IllegalStateException if unable to peek
      */
     public E peek() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
      * Returns the current size of the stack.
+     *
      * @return size of stack
      */
     public int getSize() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
      * Returns true if the stack is currently empty. False if not empty.
+     *
      * @return true if stack is empty
      */
     public boolean isEmpty() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 }

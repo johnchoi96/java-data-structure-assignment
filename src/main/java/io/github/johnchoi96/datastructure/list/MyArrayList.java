@@ -1,6 +1,6 @@
 package io.github.johnchoi96.datastructure.list;
 
-import jdk.jshell.spi.ExecutionControl;
+import org.apache.commons.lang3.NotImplementedException;
 
 public class MyArrayList<E> implements MyList<E> {
 
@@ -12,11 +12,7 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @Override
     public void add(E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -27,11 +23,7 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @Override
     public void addAtFront(E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -46,11 +38,7 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @Override
     public E remove(int index) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -64,11 +52,7 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @Override
     public E remove() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -83,29 +67,17 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @Override
     public E get(int index) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     @Override
     public int getSize() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     @Override
     public boolean isEmpty() {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 
     /**
@@ -122,10 +94,6 @@ public class MyArrayList<E> implements MyList<E> {
      */
     @Override
     public E replace(int index, E element) {
-        try {
-            throw new ExecutionControl.NotImplementedException("Not Implemented");
-        } catch (ExecutionControl.NotImplementedException e) {
-            throw new RuntimeException(e);
-        }
+        throw new NotImplementedException("Not Implemented");
     }
 }
