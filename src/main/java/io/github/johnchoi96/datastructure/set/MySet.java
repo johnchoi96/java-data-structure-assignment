@@ -1,6 +1,7 @@
 package io.github.johnchoi96.datastructure.set;
 
-import org.apache.commons.lang3.NotImplementedException;
+import io.github.johnchoi96.datastructure.list.MyArrayList;
+import io.github.johnchoi96.datastructure.list.MyList;
 
 /**
  * Use the static Array of Objects for the internal list.
