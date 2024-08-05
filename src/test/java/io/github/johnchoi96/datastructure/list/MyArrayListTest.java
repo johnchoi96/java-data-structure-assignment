@@ -2,7 +2,9 @@ package io.github.johnchoi96.datastructure.list;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class MyArrayListTest {
 
@@ -107,7 +109,7 @@ public class MyArrayListTest {
         list.remove(0);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testTryRemovingOutOfBoundsElementWithNothingWithIndex() {
         MyList<Integer> list = new MyArrayList<>();
         list.add(1);

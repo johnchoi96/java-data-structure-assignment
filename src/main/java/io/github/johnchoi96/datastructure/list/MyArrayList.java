@@ -8,6 +8,7 @@ public class MyArrayList<E> implements MyList<E> {
      * Adds element at the end of the list.
      * For example, adding [1, 2, 3, 4] in order should result in:
      * [1, 2, 3, 4]
+     *
      * @param element to add
      */
     @Override
@@ -19,6 +20,7 @@ public class MyArrayList<E> implements MyList<E> {
      * Adds element at the front of the list.
      * For example, adding [1, 2, 3, 4] in order should result in:
      * [4, 3, 2, 1]
+     *
      * @param element to add
      */
     @Override
@@ -33,6 +35,7 @@ public class MyArrayList<E> implements MyList<E> {
      * with removal index of 2 should result in:
      * [1, 2, 4]
      * If index is invalid, throw IllegalArgumentException.
+     *
      * @param index removal index
      * @return removed element
      */
@@ -42,12 +45,13 @@ public class MyArrayList<E> implements MyList<E> {
     }
 
     /**
-     * Removes an element from the front of the list.
+     * Removes an element from the end of the list.
      * For example, array list with:
      * [1, 2, 3, 4]
      * should result in:
-     * [2, 3, 4]
+     * [1, 2, 3]
      * If removal is invalid, throw IllegalStateException.
+     *
      * @return removed element
      */
     @Override
@@ -62,6 +66,7 @@ public class MyArrayList<E> implements MyList<E> {
      * with given index of 2 should result in:
      * 3
      * If index is invalid, throw IllegalArgumentException.
+     *
      * @param index of the element to retrieve
      * @return element at the given index
      */
@@ -88,7 +93,8 @@ public class MyArrayList<E> implements MyList<E> {
      * should result in:
      * [1, 2, -5, 4]
      * Throw an IllegalArgumentException if index is invalid.
-     * @param index of the list to replace
+     *
+     * @param index   of the list to replace
      * @param element new element
      * @return original element
      */
