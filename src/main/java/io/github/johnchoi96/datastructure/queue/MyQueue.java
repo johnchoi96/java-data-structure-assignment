@@ -10,7 +10,7 @@ import org.apache.commons.lang3.NotImplementedException;
  */
 public class MyQueue<E> {
 
-    private MyList<E> internalList;
+    private final MyList<E> internalList;
 
     public MyQueue() {
         // choose one of the following:

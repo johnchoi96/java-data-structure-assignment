@@ -10,7 +10,7 @@ import org.apache.commons.lang3.NotImplementedException;
  */
 public class MyStack<E> {
 
-    private MyList<E> internalList;
+    private final MyList<E> internalList;
 
     public MyStack() {
         // choose one of the following:

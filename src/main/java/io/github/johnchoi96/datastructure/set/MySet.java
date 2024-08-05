@@ -10,11 +10,7 @@ import org.apache.commons.lang3.NotImplementedException;
 public class MySet<E> {
 
     private final Object[] internalList;
-
-    public MySet() {
-        internalList = new Object[100];
-    }
-
+    
     public MySet(int capacity) {
         internalList = new Object[capacity];
     }
