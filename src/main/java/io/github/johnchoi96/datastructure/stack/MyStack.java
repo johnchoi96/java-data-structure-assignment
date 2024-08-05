@@ -10,7 +10,7 @@ import io.github.johnchoi96.datastructure.list.MyList;
  */
 public class MyStack<E> {
 
-    private MyList<E> internalList;
+    private final MyList<E> internalList;
 
     public MyStack() {
         // choose one of the following:

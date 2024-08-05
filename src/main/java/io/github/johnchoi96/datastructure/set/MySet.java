@@ -1,6 +1,7 @@
 package io.github.johnchoi96.datastructure.set;
 
-import org.apache.commons.lang3.NotImplementedException;
+import io.github.johnchoi96.datastructure.list.MyArrayList;
+import io.github.johnchoi96.datastructure.list.MyList;
 
 /**
  * Use the static Array of Objects for the internal list.
@@ -11,9 +12,7 @@ public class MySet<E> {
 
     private final Object[] internalList;
 
-    public MySet() {
-        internalList = new Object[100];
-    }
+    private int size;
 
     public MySet(int capacity) {
         internalList = new Object[capacity];
@@ -24,8 +23,18 @@ public class MySet<E> {
      *
      * @param newElement to add to the set
      */
+    @SuppressWarnings("unchecked")
     public void add(E newElement) {
-        throw new NotImplementedException();
+        int hashcode = hashCode(newElement);
+        int index = Math.abs(hashcode) % internalList.length;
+        // just in case we have a collision, we'll have a dynamic list to store element in the index
+        MyList<E> list = new MyArrayList<>();
+        if (internalList[index] == null) {
+            internalList[index] = list;
+        }
+        MyList<E> listAtIndex = (MyList<E>) internalList[index];
+        listAtIndex.add(newElement);
+        size++;
     }
 
     /**
@@ -34,7 +43,7 @@ public class MySet<E> {
      * @return the size of the set
      */
     public int getSize() {
-        throw new NotImplementedException();
+        return size;
     }
 
     /**
@@ -43,7 +52,7 @@ public class MySet<E> {
      * @return true or false
      */
     public boolean isEmpty() {
-        throw new NotImplementedException();
+        return size == 0;
     }
 
     /**
@@ -54,8 +63,25 @@ public class MySet<E> {
      * @return removed element
      * @throws IllegalArgumentException if element does not exist
      */
+    @SuppressWarnings("unchecked")
     public E remove(E element) {
-        throw new NotImplementedException();
+        if (size == 0) {
+            throw new IllegalArgumentException();
+        }
+        int hashcode = hashCode(element);
+        int index = Math.abs(hashcode) % internalList.length;
+        MyList<E> listAtIndex = (MyList<E>) internalList[index];
+        for (int i = 0; i < listAtIndex.getSize(); i++) {
+            if (listAtIndex.get(i).equals(element)) {
+                E removedObject = listAtIndex.remove(i);
+                if (listAtIndex.isEmpty()) {
+                    internalList[index] = null;
+                }
+                size--;
+                return removedObject;
+            }
+        }
+        throw new IllegalArgumentException();
     }
 
     /**
@@ -65,8 +91,20 @@ public class MySet<E> {
      * @param element to check
      * @return true if element exists
      */
+    @SuppressWarnings("unchecked")
     public boolean contains(E element) {
-        throw new NotImplementedException();
+        int hashcode = hashCode(element);
+        int index = Math.abs(hashcode) % internalList.length;
+        if (internalList[index] == null) {
+            return false;
+        }
+        MyList<E> listAtIndex = (MyList<E>) internalList[index];
+        for (int i = 0; i < listAtIndex.getSize(); i++) {
+            if (listAtIndex.get(i).equals(element)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -76,6 +114,6 @@ public class MySet<E> {
      * @return hashcode for the element
      */
     private int hashCode(E element) {
-        throw new NotImplementedException();
+        return 31 * (element.hashCode() + 51);
     }
 }

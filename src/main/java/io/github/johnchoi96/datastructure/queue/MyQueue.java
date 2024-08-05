@@ -10,7 +10,7 @@ import io.github.johnchoi96.datastructure.list.MyList;
  */
 public class MyQueue<E> {
 
-    private MyList<E> internalList;
+    private final MyList<E> internalList;
 
     public MyQueue() {
         // choose one of the following:

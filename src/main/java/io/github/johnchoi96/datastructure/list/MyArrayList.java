@@ -72,6 +72,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return removed element
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E remove(int index) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException();
@@ -95,6 +96,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return removed element
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E remove() {
         if (size == 0) {
             throw new IllegalStateException();
@@ -116,6 +118,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return element at the given index
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E get(int index) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException();
@@ -147,6 +150,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return original element
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E replace(int index, E element) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException();
