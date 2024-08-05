@@ -1,7 +1,7 @@
 package io.github.johnchoi96.datastructure.queue;
 
+import io.github.johnchoi96.datastructure.list.MyArrayList;
 import io.github.johnchoi96.datastructure.list.MyList;
-import org.apache.commons.lang3.NotImplementedException;
 
 /**
  * Use either MyArrayList or MyLinkedList for implementation.
@@ -14,7 +14,7 @@ public class MyQueue<E> {
 
     public MyQueue() {
         // choose one of the following:
-//        internalList = new MyArrayList<>();
+        internalList = new MyArrayList<>();
 //        internalList = new MyLinkedList<>();
     }
 
@@ -26,7 +26,7 @@ public class MyQueue<E> {
      * @param element to enqueue
      */
     public void enqueue(E element) {
-        throw new NotImplementedException("Not Implemented");
+        internalList.add(element);
     }
 
     /**
@@ -40,7 +40,10 @@ public class MyQueue<E> {
      * @throws IllegalStateException if element removal is invalid
      */
     public E dequeue() {
-        throw new NotImplementedException("Not Implemented");
+        if (internalList.isEmpty()) {
+            throw new IllegalStateException();
+        }
+        return internalList.remove(0);
     }
 
     /**
@@ -53,7 +56,10 @@ public class MyQueue<E> {
      * @throws IllegalStateException if peek is invalid
      */
     public E peek() {
-        throw new NotImplementedException("Not Implemented");
+        if (internalList.isEmpty()) {
+            throw new IllegalStateException();
+        }
+        return internalList.get(0);
     }
 
     /**
@@ -62,7 +68,7 @@ public class MyQueue<E> {
      * @return the size
      */
     public int getSize() {
-        throw new NotImplementedException("Not Implemented");
+        return internalList.getSize();
     }
 
     /**
@@ -71,6 +77,6 @@ public class MyQueue<E> {
      * @return true if queue is empty
      */
     public boolean isEmpty() {
-        throw new NotImplementedException("Not Implemented");
+        return internalList.isEmpty();
     }
 }

@@ -1,7 +1,7 @@
 package io.github.johnchoi96.datastructure.stack;
 
+import io.github.johnchoi96.datastructure.list.MyLinkedList;
 import io.github.johnchoi96.datastructure.list.MyList;
-import org.apache.commons.lang3.NotImplementedException;
 
 /**
  * Use either MyArrayList or MyLinkedList for implementation.
@@ -14,8 +14,8 @@ public class MyStack<E> {
 
     public MyStack() {
         // choose one of the following:
-        //        internalList = new MyArrayList<>();
-        //        internalList = new MyLinkedList<>();
+//        internalList = new MyArrayList<>();
+        internalList = new MyLinkedList<>();
     }
 
     /**
@@ -26,7 +26,7 @@ public class MyStack<E> {
      * @param element to push
      */
     public void push(E element) {
-        throw new NotImplementedException("Not Implemented");
+        internalList.addAtFront(element);
     }
 
     /**
@@ -40,7 +40,10 @@ public class MyStack<E> {
      * @throws IllegalStateException if unable to pop
      */
     public E pop() {
-        throw new NotImplementedException("Not Implemented");
+        if (internalList.isEmpty()) {
+            throw new IllegalStateException();
+        }
+        return internalList.remove();
     }
 
     /**
@@ -54,7 +57,10 @@ public class MyStack<E> {
      * @throws IllegalStateException if unable to peek
      */
     public E peek() {
-        throw new NotImplementedException("Not Implemented");
+        if (internalList.isEmpty()) {
+            throw new IllegalStateException();
+        }
+        return internalList.get(0);
     }
 
     /**
@@ -63,7 +69,7 @@ public class MyStack<E> {
      * @return size of stack
      */
     public int getSize() {
-        throw new NotImplementedException("Not Implemented");
+        return internalList.getSize();
     }
 
     /**
@@ -72,6 +78,6 @@ public class MyStack<E> {
      * @return true if stack is empty
      */
     public boolean isEmpty() {
-        throw new NotImplementedException("Not Implemented");
+        return internalList.isEmpty();
     }
 }
