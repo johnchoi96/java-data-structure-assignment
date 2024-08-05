@@ -40,6 +40,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return removed element
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E remove(int index) {
         throw new NotImplementedException("Not Implemented");
     }
@@ -55,6 +56,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return removed element
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E remove() {
         throw new NotImplementedException("Not Implemented");
     }
@@ -99,6 +101,7 @@ public class MyArrayList<E> implements MyList<E> {
      * @return original element
      */
     @Override
+    @SuppressWarnings("unchecked")
     public E replace(int index, E element) {
         throw new NotImplementedException("Not Implemented");
     }
