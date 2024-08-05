@@ -10,7 +10,7 @@ import org.apache.commons.lang3.NotImplementedException;
 public class MySet<E> {
 
     private final Object[] internalList;
-    
+
     public MySet(int capacity) {
         internalList = new Object[capacity];
     }
@@ -20,6 +20,7 @@ public class MySet<E> {
      *
      * @param newElement to add to the set
      */
+    @SuppressWarnings("unchecked")
     public void add(E newElement) {
         throw new NotImplementedException();
     }
@@ -50,6 +51,7 @@ public class MySet<E> {
      * @return removed element
      * @throws IllegalArgumentException if element does not exist
      */
+    @SuppressWarnings("unchecked")
     public E remove(E element) {
         throw new NotImplementedException();
     }
@@ -61,6 +63,7 @@ public class MySet<E> {
      * @param element to check
      * @return true if element exists
      */
+    @SuppressWarnings("unchecked")
     public boolean contains(E element) {
         throw new NotImplementedException();
     }
