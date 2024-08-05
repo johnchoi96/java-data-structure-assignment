@@ -1,7 +1,5 @@
 package io.github.johnchoi96.datastructure.list;
 
-import org.apache.commons.lang3.NotImplementedException;
-
 public class MyLinkedList<E> implements MyList<E> {
 
     public static class Node<E> {
@@ -17,6 +15,12 @@ public class MyLinkedList<E> implements MyList<E> {
 
     private Node<E> head;
 
+    private int size;
+
+    public MyLinkedList() {
+        size = 0;
+    }
+
     /**
      * Adds element at the end of the list.
      * For example, adding [1, 2, 3, 4] in order should result in:
@@ -26,7 +30,17 @@ public class MyLinkedList<E> implements MyList<E> {
      */
     @Override
     public void add(E element) {
-        throw new NotImplementedException("Not Implemented");
+        Node<E> newNode = new Node<>(element);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node<E> current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        size++;
     }
 
     /**
@@ -37,7 +51,14 @@ public class MyLinkedList<E> implements MyList<E> {
      * @param element to add
      */
     public void addAtFront(E element) {
-        throw new NotImplementedException("Not Implemented");
+        Node<E> newNode = new Node<>(element);
+        if (head == null) {
+            head = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        size++;
     }
 
     /**
@@ -54,7 +75,23 @@ public class MyLinkedList<E> implements MyList<E> {
      */
     @Override
     public E remove(int index) {
-        throw new NotImplementedException("Not Implemented");
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException();
+        }
+        E removedObject;
+        if (index == 0) {
+            removedObject = head.data;
+            head = head.next;
+        } else {
+            Node<E> currentNode = head;
+            for (int i = 0; i < index - 1; i++) {
+                currentNode = currentNode.next;
+            }
+            removedObject = currentNode.next.data;
+            currentNode.next = currentNode.next.next;
+        }
+        size--;
+        return removedObject;
     }
 
     /**
@@ -70,7 +107,13 @@ public class MyLinkedList<E> implements MyList<E> {
      */
     @Override
     public E remove() {
-        throw new NotImplementedException("Not Implemented");
+        if (size == 0) {
+            throw new IllegalStateException();
+        }
+        E removedObject = head.data;
+        head = head.next;
+        size--;
+        return removedObject;
     }
 
     /**
@@ -87,17 +130,24 @@ public class MyLinkedList<E> implements MyList<E> {
      */
     @Override
     public E get(int index) {
-        throw new NotImplementedException("Not Implemented");
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException();
+        }
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
     }
 
     @Override
     public int getSize() {
-        throw new NotImplementedException("Not Implemented");
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        throw new NotImplementedException("Not Implemented");
+        return getSize() == 0;
     }
 
     /**
@@ -116,7 +166,16 @@ public class MyLinkedList<E> implements MyList<E> {
      */
     @Override
     public E replace(int index, E element) {
-        throw new NotImplementedException("Not Implemented");
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException();
+        }
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        E oldObject = current.data;
+        current.data = element;
+        return oldObject;
     }
 
     /**
@@ -129,6 +188,12 @@ public class MyLinkedList<E> implements MyList<E> {
      * @return array list with same data as linked list
      */
     public MyArrayList<E> convertToArrayList() {
-        throw new NotImplementedException("Not Implemented");
+        MyArrayList<E> arrayList = new MyArrayList<>();
+        Node<E> current = head;
+        while (current != null) {
+            arrayList.add(current.data);
+            current = current.next;
+        }
+        return arrayList;
     }
 }
