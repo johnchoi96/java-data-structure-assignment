@@ -48,12 +48,17 @@
 
 * Exercise: Ready
 * Updated: Jul 28 2024
+* Changelog:
+    * Aug 11 2024: Ensures E extends Comparable
 * [Link](src/main/java/io/github/johnchoi96/datastructure/sort/BubbleSortMachine.java)
 
 #### Merge Sort
 
 * Exercise: Ready
 * Updated: Jul 28 2024
+* Changelog:
+    * Aug 11 2024: Ensures E extends Comparable
+
 * [Link](src/main/java/io/github/johnchoi96/datastructure/sort/MergeSortMachine.java)
 
 ## Binary Trees
