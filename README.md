@@ -74,3 +74,17 @@
 * Exercise: Not Ready
 * Updated: n/a
 * [Link](src/main/java/io/github/johnchoi96/datastructure/binary_tree/MyBinarySearchTree.java)
+
+## Search Algorithms
+
+#### Depth-First Search (DFS)
+
+* Exercise: Not Ready
+* Updated: n/a
+* [Link](src/main/java/io/github/johnchoi96/datastructure/search/DepthFirstSearch.java)
+
+#### Breadth-First Search (BFS)
+
+* Exercise: Not Ready
+* Updated: n/a
+* [Link](src/main/java/io/github/johnchoi96/datastructure/search/BreadthFirstSearch.java)
